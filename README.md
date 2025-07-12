@@ -4,4 +4,4 @@
 
 - Contribución realizada a través de un pull request
 
-actualización de README desde brand DDG-5
+ultima actualizacion 12-07-2025
