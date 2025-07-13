@@ -48,15 +48,13 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      
-      - name: Generar mensaje
-        run: echo "Listo para desplegar contenido estático"
 
       # Subir contenido como artefacto (actualizado)
       - name: Subir archivos a GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
-          path: .  # Puedes cambiar a ./public si tu sitio está en una subcarpeta
+          name: github-pages
+          path: .  # O ./public si está en otra carpeta
 
       # Desplegar en GitHub Pages
       - name: Deploy to GitHub Pages
