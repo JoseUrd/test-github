@@ -30,7 +30,7 @@ jobs:
         run: npm install -g markdownlint-cli
 
       # Paso nuevo: Validar archivos Markdown
-      - name: Validar archivos Markdown
+      - name: Validar archivos con Markdown
         run: markdownlint "**/*.md"
 
       # Runs a single command using the runners shell
