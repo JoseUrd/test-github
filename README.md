@@ -6,4 +6,4 @@
 
 ultima actualizacion 12-07-2025
 
-#Error de prueba prueba2
+# Error de prueba prueba2
