@@ -20,6 +20,12 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    # Permisos
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -45,6 +51,4 @@ jobs:
       
       # Despliegue automático a GitHub Pages
       - name: Deploy to GitHub Pages
-        id: deploy
         uses: actions/deploy-pages@v1
-
