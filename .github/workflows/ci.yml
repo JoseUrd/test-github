@@ -42,18 +42,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-
-    steps:
-      - name: Checkout del repositorio
-        uses: actions/checkout@v4
-
-      - name: Desplegar en GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      
+      # Desplegar a GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: .
+
