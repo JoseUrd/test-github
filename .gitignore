@@ -1,0 +1,17 @@
+# Archivos sensibles
+.env
+*.key
+*.pem
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependencias y builds
+node_modules/
+dist/
+.ssh/
+id_rsa
