@@ -43,10 +43,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       
-      # Desplegar a GitHub Pages
+      # Despliegue automático a GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+        id: deploy
+        uses: actions/deploy-pages@v1
 
