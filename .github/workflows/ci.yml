@@ -13,18 +13,18 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Permisos
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build-and-deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Permisos
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -49,13 +49,15 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       
-      # Aquí simplemente usamos los archivos que ya están en el repo
-      # Suponiendo que tu contenido está en la raíz o en ./docs
+      - name: Generar mensaje
+        run: echo "Listo para desplegar contenido estático"
 
-      - name: Upload artifact for deployment
-        uses: actions/upload-pages-artifact@v1
+      # Subir contenido como artefacto (actualizado)
+      - name: Subir archivos a GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: .  # Usa todos los archivos del repositorio
+          path: .  # Puedes cambiar a ./public si tu sitio está en una subcarpeta
 
+      # Desplegar en GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
